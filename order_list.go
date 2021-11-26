@@ -29,11 +29,11 @@ func (req *OrderListRequest) SignMD5(signatureKey string) error {
 
 // OrderListResponse ...
 type OrderListResponse struct {
-	DataList []DataList `json:"dataList"`
-	Total    int        `json:"total"`
+	DataList []*OrderDataList `json:"dataList"`
+	Total    int              `json:"total"`
 }
 
-type DataList struct {
+type OrderDataList struct {
 	OrderID                     string `json:"orderid"`
 	PayTime                     string `json:"paytime"`
 	PayPrice                    string `json:"payprice"`
