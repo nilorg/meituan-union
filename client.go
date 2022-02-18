@@ -54,7 +54,7 @@ func (c *Client) getExecute(uri string, param interface{}) (body []byte, err err
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode != 200 {
-		err = fmt.Errorf("请求接口状态码错误：%d", resp.StatusCode)
+		err = fmt.Errorf("请求接口状态码错误: %d", resp.StatusCode)
 		return
 	}
 	body, err = ioutil.ReadAll(resp.Body)
@@ -80,7 +80,7 @@ func (c *Client) postExecute(uri string, param interface{}) (body []byte, err er
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode != 200 {
-		err = fmt.Errorf("请求接口状态码错误：%d", resp.StatusCode)
+		err = fmt.Errorf("请求接口状态码错误: %d", resp.StatusCode)
 		return
 	}
 	body, err = ioutil.ReadAll(resp.Body)
@@ -106,7 +106,7 @@ func (c *Client) GenerateLink(req *GenerateLinkRequest) (resp *GenerateLinkRespo
 		return
 	}
 	if resp.Status != 0 {
-		err = fmt.Errorf("请求接口错误：%s", resp.Des)
+		err = fmt.Errorf("请求接口错误: %s", resp.Des)
 		return
 	}
 	return
